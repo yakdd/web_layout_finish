@@ -1,0 +1,63 @@
+/* task 2 ================================================
+2. Необходимо создать псевдоэлемент new
+3. Разместить его в правом верхнем углу блока product чтобы он не смещал другие элементы
+4. Размеры блока 35 на 35 px
+5. цвет фона красный, а цвет текста белый
+6. Необходимо создать псевдоэлемент sale
+7. Разместить его в левом верхнем углу блока product чтобы он не смещал другие элементы
+8. размеры блока 35 на 35 px
+9. цвет фона оранжевый, а цвет текста белый
+*/
+.product {
+    width: 250px;
+    padding: 24px;
+    border: 1px solid #000;
+    position: relative;
+}
+
+.product::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: 'new';
+    width: 35px;
+    height: 35px;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.product__img {
+    background-color: forestgreen;
+    height: 150px;
+}
+
+/* task 4 ================================================
+2. Необходимо добавить
+e. Можно менять параметры ширины и высоты при необходимости
+*/
+.item {
+    width: 150px;
+    height: 86px;
+    background-color: forestgreen;
+    border: 1px solid #000;
+    transition: transform .5s;
+}
+
+/* a. При наведении на первый блок, чтобы он смещался на 50px вправо */
+.item_1:hover {
+    transform: translateX(50px);
+}
+
+/* b. при наведении на второй блок, он должен становиться в 2 раза больше */
+.item_2:hover {
+    transform: translateX(100px) scale(2);
+}
+
+/* c. При наведении на 3 блок, он должен повернуться по часовой стрелке на 60 градусов */
+.item_3:hover {
+    transform: rotate(60deg);
+}
